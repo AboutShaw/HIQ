@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydrogen Opportunity Expression of Interest</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: rgb(20, 13, 47);
+            color: white;
+        }
+        .form-container {
+            width: 500px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block; /* Makes each label take up its own line */
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        input, textarea {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+          height: 120px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        .error {
+            color: red;
+            text-align: left;
+        }
+        h2, p {
+            text-align: center;
+        }
+        .privacy-container {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            justify-content: center;
+        }
+        .privacy-container label {
+            margin-bottom: 0;
+            text-align: left;
+        }
+        .location-checkboxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+            gap: 10px; /* Adjust gap between checkboxes */
+        }
+
+        .location-checkboxes label { /* Style labels within the grid */
+             text-align: left;
+        }
+
+        .location-checkboxes input[type="checkbox"] {
+            margin-right: 5px; /* Add some space between checkbox and label */
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+
+    <img src="HIQLogo.png" alt="Hydrogen IQ Logo" width=150px class="center" >
+    
+    <h2>Hydrogen Opportunity Expression of Interest</h2>
+
+    <p>Thank you for your interest in Hydrogen IQ. We're excited to learn about your hydrogen challenge and how we can help you find the right solutions.  Please share the details of your opportunity below.</p>
+
+    <form id="hydrogenForm" action="#" method="post">
+        <label for="companyName">Company Name*:</label>
+        <input type="text" id="companyName" name="companyName" required>
+        <div id="companyNameError" class="error"></div>
+
+        <label for="companyWebsite">Company Website*:</label>
+        <input type="url" id="companyWebsite" name="companyWebsite" required>
+        <div id="companyWebsiteError" class="error"></div>
+
+        <label for="fullName">Full Name*:</label>
+        <input type="text" id="fullName" name="fullName" required>
+        <div id="fullNameError" class="error"></div>
+
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error"></div>
+
+        <label for="companyPosition">Company Position*:</label>
+        <input type="text" id="companyPosition" name="companyPosition" required>
+        <div id="companyPositionError" class="error"></div>
+
+        <label>Location of Possible Hydrogen Opportunity*:</label>
+        <div id="locationError" class="error"></div>
+        <div class="location-checkboxes">
+            <input type="checkbox" id="eastOfEngland" name="location[]" value="East of England">
+            <label for="eastOfEngland">East of England</label>
+
+            <input type="checkbox" id="london" name="location[]" value="London">
+            <label for="london">London</label>
+
+            <input type="checkbox" id="northEast" name="location[]" value="North East">
+            <label for="northEast">North East</label>
+
+            <input type="checkbox" id="northWest" name="location[]" value="North West">
+            <label for="northWest">North West</label>
+
+            <input type="checkbox" id="southEast" name="location[]" value="South East">
+            <label for="southEast">South East</label>
+
+            <input type="checkbox" id="southWest" name="location[]" value="South West">
+            <label for="southWest">South West</label>
+
+            <input type="checkbox" id="eastMidlands" name="location[]" value="East Midlands">
+            <label for="eastMidlands">East Midlands</label>
+
+            <input type="checkbox" id="westMidlands" name="location[]" value="West Midlands">
+            <label for="westMidlands">West Midlands</label>
+
+            <input type="checkbox" id="yorkshireHumber" name="location[]" value="Yorkshire and The Humber">
+            <label for="yorkshireHumber">Yorkshire and The Humber</label>
+
+            <input type="checkbox" id="scotland" name="location[]" value="Scotland">
+            <label for="scotland">Scotland</label>
+
+            <input type="checkbox" id="wales" name="location[]" value="Wales">
+            <label for="wales">Wales</label>
+
+            <input type="checkbox" id="northernIreland" name="location[]" value="Northern Ireland">
+            <label for="northernIreland">Northern Ireland</label>
+
+            <input type="checkbox" id="eu" name="location[]" value="EU">
+            <label for="eu">EU</label>
+
+            <input type="checkbox" id="restOfTheWorld" name="location[]" value="Rest of the World">
+            <label for="restOfTheWorld">Rest of the World</label>
+        </div>
+
+        <label for="description">Hydrogen Opportunity Description (Max 500 characters)*:<br> (Examples: Transition of diesel or natural gas powered vehicles, plant or processes to hydrogen)</label>
+        <textarea id="description" name="description" maxlength="500" required></textarea>
+        <div id="descriptionError" class="error"></div>
+
+        <div class="privacy-container">
+            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+            <label for="privacyPolicy">Privacy Policy*</label>
+            <div id="privacyPolicyError" class="error"></div>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+    <script>
+        // ... (JavaScript remains the same)
+    </script>
+
+</body>
+</html>
